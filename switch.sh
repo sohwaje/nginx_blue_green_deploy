@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Crawl current connected port of WAS
-SERVICE_URL="../nginx/service_url.inc"
+SERVICE_URL="nginx/service_url.inc"
 CURRENT_PORT=$(cat $SERVICE_URL | grep -Po '[0-9]+' | tail -1)
 TARGET_PORT=0
 
