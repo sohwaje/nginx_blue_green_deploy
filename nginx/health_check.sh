@@ -3,7 +3,7 @@
 # 새로 띄운 WAS가 완전히 실행되기까지 health check 하는 스크립트
 END
 # Crawl current connected port of WAS
-SERVICE_URL="/etc/nginx/service_url.inc"
+SERVICE_URL="../nginx/service_url.inc"
 CURRENT_PORT=$(cat $SERVICE_URL | grep -Po '[0-9]+' | tail -1)
 TARGET_PORT=0
 
