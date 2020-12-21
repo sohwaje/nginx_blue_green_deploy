@@ -29,7 +29,7 @@ services:
       retries: 3
     # depends_on:
     #   - tomcat8
-networks:
-  default:
-   external:
-    name: production_network # use existing network
+# networks:
+#   default:
+#    external:
+#     name: production_network # use existing network
