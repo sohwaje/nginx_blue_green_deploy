@@ -23,7 +23,7 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       # - ./server.rewrites:/etc/nginx/server.rewrites
       - ./nginx/general-security-headers.conf:/etc/nginx/conf.d/general-security-headers.conf
-      - ./nginx/service_url.ic:/etc/nginx/service_url.inc
+      - ./nginx/service_url.inc:/etc/nginx/service_url.inc
     ports:
       - "80:80"
       - "443:443"
