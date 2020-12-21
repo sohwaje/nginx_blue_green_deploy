@@ -3,7 +3,7 @@ MAINTAINER sohwaje <sohwaje@gmail.com>
 
 RUN mkdir /etc/nginx/sites-available
 RUN mkdir /etc/nginx/sites-enabled
-RUN mkdir /var/log/nginx/instance_logs
+RUN mkdir /var/log/nginx/blue_logs
 
 
 # COPY /nginx/nginx.conf /etc/nginx/nginx.conf
