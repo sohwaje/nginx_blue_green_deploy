@@ -6,8 +6,8 @@ RUN mkdir /etc/nginx/sites-enabled
 RUN mkdir /var/log/nginx/blue_logs
 
 COPY /nginx/health_check.sh /
-COPY /nginx\run_new_was.sh /
-COPY /nginx\switch.sh /
+COPY /nginx/run_new_was.sh /
+COPY /nginx/switch.sh /
 # COPY /nginx/nginx.conf /etc/nginx/nginx.conf
 # COPY /nginx/service_url.inc /etc/nginx
 # COPY /nginx/server.rewrites /etc/nginx/server.rewrites
