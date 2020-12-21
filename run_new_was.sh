@@ -9,7 +9,8 @@
 8081
 END
 # 현재 사용 중인 Port를 service_url.inc에 가져온다.
-CURRENT_PORT=$(cat /home/azureuser/apps/service_url.inc | grep -Po '[0-9]+' | tail -1)
+SERVICE_URL="/home/azureuser/nginx_blue_green_deploy/service_url.inc"
+CURRENT_PORT=$(cat $SERVICE_URL | grep -Po '[0-9]+' | tail -1)
 # TARGET_PORT는 아래 if문에 따라 결정된다.
 TARGET_PORT=0
 
@@ -34,7 +35,7 @@ if [ ! -z ${TARGET_PID} ]; then
 fi
 
 # app 실행
-# nohup java -jar -Dserver.port=${TARGET_PORT} /home/ec2-user/playground-logging/build/libs/* > /home/ec2-user/nohup.out 2>&1 &
-./app-start.sh start
+nohup java -jar -Dserver.port=${TARGET_PORT} ${APP_BASE}/*.jar > /home/ec2-user/nohup.out 2>&1 &
+
 echo "> Now new WAS runs at ${TARGET_PORT}."
 exit 0
