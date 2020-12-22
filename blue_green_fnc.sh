@@ -1,14 +1,15 @@
 #!/bin/bash
 
-# JAVA APP 홈디렉토리
+# JAVA APP 홈디렉토리(jar, war)
 APP_BASE="/home/azureuser/apps"
 
 # Service IP or Host
 HOST="10.1.0.19"
 
-# 현재 사용 중인 Port를 service_url.inc에 가져온다.
+# 현재 사용 중인 기본 Port 정보
 SERVICE_URL="nginx/service_url.inc"
-# CURRENT_PORT=$(cat $SERVICE_URL | grep -Po '[0-9]+' | tail -1)
+
+# 현재 사용 중인 기본 Port를 가져온다
 CURRENT_PORT()
 {
   cat $SERVICE_URL | grep -Po '[0-9]+' | tail -1
@@ -16,12 +17,6 @@ CURRENT_PORT()
 
 # TARGET_PORT는 toggle_port_number 함수에 의해 결정된다.
 TARGET_PORT=0
-
-# 가장 최근에 만들어진 jar 파일 찾기
-latest_jar()
-{
-  ls -ltr $APP_BASE | grep ".jar" | grep -v grep | awk '{print $NF}' | grep -v ^$ |tail -n1
-}
 
 # Toggle port Number
 toggle_port_number()
@@ -34,4 +29,10 @@ toggle_port_number()
       echo "> No WAS is connected to nginx"
       exit 1
   fi
+}
+
+# 가장 최근에 만들어진 jar 파일 찾기
+latest_jar()
+{
+  ls -ltr $APP_BASE | grep ".jar" | grep -v grep | awk '{print $NF}' | grep -v ^$ |tail -n1
 }
