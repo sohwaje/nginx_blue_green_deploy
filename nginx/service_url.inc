@@ -1,1 +1,1 @@
-set $service_url http://10.1.0.19:8081;
+set $service_url http://${HOST}:8081;
