@@ -17,6 +17,12 @@ CURRENT_PORT()
 # TARGET_PORT는 아래 if문에 따라 결정된다.
 TARGET_PORT=0
 
+# 가장 최근에 만들어진 jar 파일 찾기
+latest_jar()
+{
+  ls -ltr $APP_BASE | grep ".jar" | grep -v grep | awk '{print $NF}' | grep -v ^$ |tail -n1
+}
+
 # Toggle port Number
 toggle_port_number()
 {

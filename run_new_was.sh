@@ -40,7 +40,7 @@ if [ ! -z ${TARGET_PID} ]; then
 fi
 
 # app 실행
-nohup java -jar -Dserver.port=${TARGET_PORT} ${APP_BASE}/*.jar > /dev/null 2>&1 &
+nohup java -jar -Dserver.port=${TARGET_PORT} ${APP_BASE}/$(latest_jar) > /dev/null 2>&1 &
 
 echo "> Now new WAS runs at ${TARGET_PORT}."
 exit 0
