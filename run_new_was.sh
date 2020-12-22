@@ -8,7 +8,7 @@
 1
 8081
 END
-
+cd "$(dirname "$0")"
 # # APP 홈디렉토리
 # APP_BASE="/home/azureuser/apps"
 # # 현재 사용 중인 Port를 service_url.inc에 가져온다.

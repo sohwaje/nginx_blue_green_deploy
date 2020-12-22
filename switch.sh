@@ -1,5 +1,5 @@
 #!/bin/bash
-. blue_green_fnc.sh
+cd "$(dirname "$0")"
 # Crawl current connected port of WAS
 # SERVICE_URL="nginx/service_url.inc"
 # CURRENT_PORT=$(cat $SERVICE_URL | grep -Po '[0-9]+' | tail -1)
