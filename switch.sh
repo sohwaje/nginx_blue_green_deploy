@@ -1,12 +1,10 @@
 #!/bin/bash
-cd "$(dirname "$0")"
 # Crawl current connected port of WAS
 # SERVICE_URL="nginx/service_url.inc"
 # CURRENT_PORT=$(cat $SERVICE_URL | grep -Po '[0-9]+' | tail -1)
 # TARGET_PORT=0
-CURRENT_PORT=$(CURRENT_PORT)
 
-echo "> Nginx currently proxies to ${CURRENT_PORT}."
+echo "> Nginx currently proxies to $(CURRENT_PORT)."
 
 # Toggle port number
 # if [ ${CURRENT_PORT} -eq 8081 ]; then

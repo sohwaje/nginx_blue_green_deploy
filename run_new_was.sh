@@ -8,7 +8,7 @@
 1
 8081
 END
-cd "$(dirname "$0")"
+
 # # APP 홈디렉토리
 # APP_BASE="/home/azureuser/apps"
 # # 현재 사용 중인 Port를 service_url.inc에 가져온다.
@@ -16,9 +16,7 @@ cd "$(dirname "$0")"
 # CURRENT_PORT=$(cat $SERVICE_URL | grep -Po '[0-9]+' | tail -1)
 # # TARGET_PORT는 아래 if문에 따라 결정된다.
 # TARGET_PORT=0
-CURRENT_PORT=$(CURRENT_PORT)
-lastest_jar=$(latest_jar)
-echo "> Current port of running WAS is ${CURRENT_PORT}."
+echo "> Current port of running WAS is $(CURRENT_PORT)."
 
 # 현재 포트 조건이 참이면 포트를 변경한다.
 # if [ ${CURRENT_PORT} -eq 8081 ]; then
@@ -40,7 +38,7 @@ if [ ! -z ${TARGET_PID} ]; then
 fi
 
 # app 실행
-nohup java -jar -Dserver.port=${TARGET_PORT} ${APP_BASE}/${latest_jar} > /dev/null 2>&1 &
+nohup java -jar -Dserver.port=${TARGET_PORT} ${APP_BASE}/$(latest_jar) > /dev/null 2>&1 &
 
 echo "> Now new WAS runs at ${TARGET_PORT}."
 exit 0
