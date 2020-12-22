@@ -16,10 +16,10 @@ do
     echo "> #${RETRY_COUNT} trying..."
     # RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}"  http://127.0.0.1:${TARGET_PORT}/health)
     RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}"  http://${HOST}:${TARGET_PORT}/)   # HTTP 응답 코드 체크
-    if [ ${RESPONSE_CODE} -eq 200||301 ]; then
+    if [[ ${RESPONSE_CODE} -eq 200 ]] || [[ ${RESPONSE_CODE} -eq 301 ]]; then
         echo "> New WAS successfully running"
         exit 0
-    elif [ ${RETRY_COUNT} -eq 10 ]; then
+    elif [[ ${RETRY_COUNT} -eq 10 ]]; then
         echo "> Health check failed."
         exit 1
     fi
