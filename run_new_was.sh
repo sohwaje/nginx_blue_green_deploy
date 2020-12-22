@@ -8,6 +8,7 @@
 1
 8081
 END
+# include script function
 . blue_green_fnc.sh
 
 # # APP 홈디렉토리
