@@ -36,9 +36,3 @@ latest_jar()
 {
   ls -ltr $APP_BASE | grep ".jar" | grep -v grep | awk '{print $NF}' | grep -v ^$ |tail -n1
 }
-
-# TARGET_PORT로 TARGET_PID를 찾는다.
-TARGET_PID()
-{
-  lsof -Fp -i TCP:${TARGET_PORT} | grep -Po 'p[0-9]+' | grep -Po '[0-9]+'
-}
