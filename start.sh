@@ -1,4 +1,5 @@
 #!/bin/sh
+cd "$(dirname "$0")"
 # function check
 if [[ ! -x blue_green_fnc.sh ]]
 then
