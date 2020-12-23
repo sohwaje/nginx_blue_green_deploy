@@ -12,6 +12,7 @@ echo "set \$service_url http://${HOST}:${TARGET_PORT};" | tee $SERVICE_URL
 echo "> Now Nginx proxies to ${TARGET_PORT}."
 
 # Reload nginx Docker
-sudo docker exec -it nginx nginx -s reload
+# sudo docker exec -it nginx nginx -s reload # only terminal
+sudo docker exec nginx nginx -s reload  # only jenkins
 
 echo "> Nginx Docker reloaded."
