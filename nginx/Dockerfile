@@ -5,7 +5,7 @@ RUN mkdir /etc/nginx/sites-available
 RUN mkdir /etc/nginx/sites-enabled
 RUN mkdir /var/log/nginx/blue_logs
 
-ADD /nginx/default.conf /etc/nginx/sites-available
+# ADD /nginx/default.conf /etc/nginx/sites-available
 ADD /nginx/default_catchall.html /usr/share/nginx/html
 # COPY /nginx/nginx.conf /etc/nginx/nginx.conf
 # COPY /nginx/service_url.inc /etc/nginx
