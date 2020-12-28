@@ -5,14 +5,8 @@ RUN mkdir /etc/nginx/sites-available
 RUN mkdir /etc/nginx/sites-enabled
 RUN mkdir /var/log/nginx/blue_logs
 
-# ADD /nginx/default.conf /etc/nginx/sites-available
+
 ADD /nginx/default_catchall.html /usr/share/nginx/html
-# COPY /nginx/nginx.conf /etc/nginx/nginx.conf
-# COPY /nginx/service_url.inc /etc/nginx
-# COPY /nginx/server.rewrites /etc/nginx/server.rewrites
-# COPY /nginx/general-security-headers.conf /etc/nginx/conf.d/general-security-headers.conf
 # COPY /nginx/cert.pem /etc/nginx/conf.d
-# COPY /nginx/hiclass.pem /etc/nginx/conf.d
-# RUN ln -s /etc/nginx/sites-available/blue.conf /etc/nginx/sites-enabled/blue.conf
-# ADD load_pagespeed_module.conf /usr/local/nginx/conf/conf.d/load_pagespeed_module.conf
+# COPY /nginx/key.pem /etc/nginx/conf.d
 CMD ["nginx", "-g", "daemon off;"]
